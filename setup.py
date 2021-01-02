@@ -7,7 +7,7 @@ setup(
     name='COVID19analysis',
     version='1.0',
     packages=['COVID19analysis'],
-    url='https://www.github.com/prasannaba',
+    url='https://github.com/prasannaba/COVID-19_Analysis_Library',
     license='MIT',
     author='Prasanna',
     python_requires='>=3.7',
