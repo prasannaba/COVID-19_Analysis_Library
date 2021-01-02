@@ -16,8 +16,9 @@ setup(
     author_email='prasanna.badami@hotmail.com',
     description='COVID19Analysis based on CSSEGISandData on GitHub',
     long_description=readme,
+    long_description_content_type = 'text/markdown',
     classifiers=[
-        'Development Status :: Release',
+        'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3.7',
@@ -27,6 +28,9 @@ setup(
         'Topic :: Scientific/Engineering :: Visualization',
         'Topic :: Software Development :: Libraries',
         'Topic :: Software Development :: Libraries :: Python Modules',
-        'Intended Audience :: Developers, Scientists, Engineers, Industry, Government, Public Policy',
+        'Intended Audience :: Developers', 
+        'Intended Audience :: Science/Research', 
+        'Intended Audience :: Information Technology',
+        'Intended Audience :: Financial and Insurance Industry'
     ],
 )
