@@ -34,7 +34,7 @@ report it is suggested to connect to CSSEGISandData repository on GitHub.
 @author: Prasanna Badami
 """
 
-__version__ = '1.0'
+__version__ = '1.0.1'
 
 import pandas as pd
 import collections
@@ -272,6 +272,7 @@ def daily_report(*, filename=''):
                                            }
                                            else{
                                                 province = s_states.options[0]
+                                                s_states.value = s_states.options[0] 
                                                 var foptions2 = counties.data[s_states.options[0]].filter(function(value, index, self){return value != 'NaN'})
                                                 var coptions = foptions2.filter(function(value, index, self){return self.indexOf(value) == index})
                                                 s_counties.options = coptions
@@ -280,8 +281,7 @@ def daily_report(*, filename=''):
                                                     admin = 'nan'
                                                 }
                                                 else{
-                                                    admin = s_counties.options[0]
-                                                    s_states.value = s_states.options[0]                      
+                                                    admin = s_counties.options[0]                     
                                                 }
     
                                            }
