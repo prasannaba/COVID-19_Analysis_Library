@@ -5,7 +5,7 @@ with open('Readme.md', 'r') as f:
 
 setup(
     name='COVID19analysis',
-    version='1.0',
+    version='1.0.1',
     packages=['COVID19analysis'],
     url='https://github.com/prasannaba/COVID-19_Analysis_Library',
     license='MIT',
