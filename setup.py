@@ -5,7 +5,7 @@ with open('Readme.md', 'r') as f:
 
 setup(
     name='COVID19analysis',
-    version='1.0.1',
+    version='1.0.2',
     packages=['COVID19analysis'],
     url='https://github.com/prasannaba/COVID-19_Analysis_Library',
     license='MIT',
@@ -16,7 +16,7 @@ setup(
     author_email='prasanna.badami@hotmail.com',
     description='COVID19Analysis based on CSSEGISandData on GitHub',
     long_description=readme,
-    long_description_content_type = 'text/markdown',
+    long_description_content_type='text/markdown',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: MIT License',

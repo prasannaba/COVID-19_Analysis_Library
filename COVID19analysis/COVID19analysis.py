@@ -906,7 +906,7 @@ def trends():
         # bokeh plots stored in list linear
         hv_list_linear = [hv.render(i.hvplot.line(tools=[hv_hover],
                                                   logy=False, width=1200, height=600,
-                                                  grid=True,
+                                                  grid=True, line_width=5,
                                                   yformatter=NumeralTickFormatter(format='0.0a')
                                                   ).opts(legend_position='right')
                                     ) for i in df_list
@@ -915,7 +915,7 @@ def trends():
         # bokeh plots stored in list log
         hv_list_log = [hv.render(i.hvplot.line(tools=[hv_hover],
                                                logy=True, width=1200, height=600,
-                                               grid=True, ylim=(1, i.max()[0]),
+                                               grid=True, line_width=5, ylim=(1, i.max()[0]),
                                                yformatter=NumeralTickFormatter(format='0.0a')
                                                ).opts(legend_position='right')
                                  ) for i in df_list
@@ -938,6 +938,8 @@ def trends():
             j.yaxis.axis_label_text_font_style = 'bold'
             j.yaxis.major_label_text_font_style = 'bold'
 
+            j.legend.click_policy = 'hide'
+
         for i, j in zip(trends_list_log, hv_list_log):
             j.toolbar.active_drag = None
             j.y_range.start = 1
@@ -954,6 +956,8 @@ def trends():
             j.yaxis.axis_label = 'COVID19_Case'
             j.yaxis.axis_label_text_font_style = 'bold'
             j.yaxis.major_label_text_font_style = 'bold'
+
+            j.legend.click_policy = 'hide'
 
         bkh_dict_linear = collections.UserDict(zip(trends_list_linear, hv_list_linear))
         bkh_dict_log = collections.UserDict(zip(trends_list_log, hv_list_log))
@@ -999,7 +1003,8 @@ def trends():
 
         # footer for trends comparison(Top 10 countries), footer width 5 less than plot width
         footer_trends_comparison = Div(text="""Graphic: Prasanna Badami <div>Source: Center for Systems Science & Engineering, Johns Hopkins University</div> 
-                                        <div>Date: {} </div>""".format(date_on_plot),
+                                        <div>Date: {} </div>
+                                        <div>Note: Click on interactive legends to select, enable or disable trends comparison </div>""".format(date_on_plot),
                                        width=1195,
                                        background='white',
                                        #                                style={'font-family': 'Helvetica',
