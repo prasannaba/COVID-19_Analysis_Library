@@ -1258,9 +1258,8 @@ def trends():
                       height=600,
                       x_range=FactorRange(*x),
                       tooltips=hover_tool_bar.tooltips,
-                      active_drag=None
                       )
-
+        pbar.toolbar.active_drag = None
         pbar.vbar(source=source_ww_bar, x='x', top='Cases',
                   width=1, bottom=0,
                   fill_color=factor_cmap('x', palette=['royalblue', 'lawngreen', 'red', 'orange'],
