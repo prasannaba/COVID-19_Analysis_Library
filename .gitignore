@@ -1,3 +1,4 @@
 # Ignore .idea files
 .idea/
 .pypirc
+*.pyc
