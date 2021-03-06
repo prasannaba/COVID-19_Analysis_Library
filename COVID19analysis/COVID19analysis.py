@@ -34,7 +34,7 @@ report it is suggested to connect to CSSEGISandData repository on GitHub.
 @author: Prasanna Badami
 """
 
-__version__ = '1.0.1'
+__version__ = '1.1.0'
 
 import pandas as pd
 import collections
@@ -345,7 +345,6 @@ def daily_report(*, filename=''):
                                               s_counties.options = ucoptions
     
                                               if(s_counties.options[0] == undefined){
-                                                    s_counties.value = null
                                                     admin = 'nan'
                                               }
                                               else{

@@ -1,11 +1,12 @@
 from setuptools import setup
+from COVID19analysis import __version__
 
 with open('Readme.md', 'r') as f:
     readme = f.read()
 
 setup(
     name='COVID19analysis',
-    version='1.0.3',
+    version=__version__,
     packages=['COVID19analysis'],
     url='https://github.com/prasannaba/COVID-19_Analysis_Library',
     license='MIT',
