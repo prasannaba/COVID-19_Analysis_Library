@@ -34,7 +34,7 @@ report it is suggested to connect to CSSEGISandData repository on GitHub.
 @author: Prasanna Badami
 """
 
-__version__ = '1.1.0'
+__version__ = '1.2.6'
 
 import pandas as pd
 import collections
@@ -886,7 +886,7 @@ def trends():
                            'Active_log']
 
         # hover for linear & log
-        hv_hover = HoverTool(tooltips=[('Country', '@Variable'), ('Date', '@index{%F}'), ('Cases', '@value{0,}')],
+        hv_hover = HoverTool(tooltips=[('Country', '@Country_over_Region'), ('Date', '@index{%F}'), ('Cases', '@value{0,}')],
                              formatters={'@index': 'datetime'}
                              )
 
