@@ -34,7 +34,7 @@ report it is suggested to connect to CSSEGISandData repository on GitHub.
 @author: Prasanna Badami
 """
 
-__version__ = '1.2.6'
+__version__ = '1.2.7'
 
 import pandas as pd
 import collections
@@ -68,13 +68,13 @@ def daily_report(*, filename=''):
     Important Note: This function requires internet connection to connect to CSSEGISandData repository on GitHub or local file,
     else it will raise error.
 
-    Daily interactive HTML report for all countries, provinces & counties, confirmed, active, recovery, death,
+    Daily interactive HTML reports for all countries, provinces & counties, confirmed, active, recovery, death,
     incident rate, case fatality ratio.
 
     Input:
     local downloaded mm-dd-yyyy.csv or no arguments(reads latest mm-dd-yyyy.csv directly from CSSEGISandData repository on GitHub)
 
-    :return: Daily interactive HTML report for all countries, provinces & counties
+    :return: Daily interactive HTML reports for all countries, provinces & counties
 
     """
     date_on_file_today = datetime.today().strftime('%m-%d-%Y')
@@ -139,7 +139,7 @@ def daily_report(*, filename=''):
             # dictionary, which in turn is used to create ColumnDataSource for plots. Logic here is: to have a
             # categorical column 'categories' & columns for every country, country_province & country_province_admin2
             # corresponding to each category. default is added for displaying first plot to display when standalone HTML
-            # output is opened.. here my home country & province are selected as default. color column is added to fill
+            # output is opened. here my home country & province are selected as default. color column is added to fill
             # bar color for each 'categories' in bar plot
             df_drfc = df_daily_report.filter(
                 ['Admin2', 'Province_State', 'Country_Region', 'Confirmed', 'Deaths', 'Recovered', 'Active',
@@ -442,7 +442,7 @@ def trends():
 
     Input:
 
-    The following files from CSSEGISandData repository on Github are used as inputs:
+    The following files from CSSEGISandData repository on GitHub are used as inputs:
 
     - time_series_covid19_confirmed_global.csv
     - time_series_covid19_recovered_global.csv
@@ -563,7 +563,7 @@ def trends():
         # print('Connecting, downloading & processing covid-19 global confirmed, recovered & deaths CSV files from CSSEGISandData repository on GitHub..')
         progress_bar.update(1)
 
-        # Read & create a copy confirmed confirmed global cases
+        # Read & create a copy confirmed global cases
         df_confirmed = create_df(
             pd.read_csv(url_c, index_col=['Country/Region'], parse_dates=True, infer_datetime_format=True))
 
@@ -1041,7 +1041,7 @@ def trends():
         # print('Generating graphs, total 6 graphs for 6 trends for trends by country tab..')
         progress_bar.update(1)
 
-        # Figure for graphs, basic things done here..
+        # Figure for graphs, basic things done here.
         # Confirmed cases
         p_confirmed_cases = figure(tools=[hover_tool_all], x_axis_type='datetime')
         # Daily cases
@@ -1252,7 +1252,7 @@ def trends():
         #  display top 10 data along with plot
         table_top10 = hv.Table(dft, kdims='Country/Region').opts(width=600)
 
-        # FactorRange is important, else plot will be empty.. setting x_range is very important in Bokeh
+        # FactorRange is important, else plot will be empty. setting x_range is very important in Bokeh
         pbar = figure(width=930,
                       height=600,
                       x_range=FactorRange(*x),
@@ -1314,7 +1314,7 @@ def trends():
         # print('Arranging everything for dashboard')
         progress_bar.update(1)
 
-        # Finally arrange everything in order for dashboard..
+        # Finally, arrange everything in order for dashboard..
         pn_output = pn.Column(pn.Tabs(pn.WidgetBox(s200, t198,
                                                    # Javascript is used to control the graphs in bokeh gridplot
                                                    # Javascript gets activated whenever s200 changes(initiated by user)

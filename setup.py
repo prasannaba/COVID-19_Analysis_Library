@@ -12,7 +12,7 @@ setup(
     license='MIT',
     author='Prasanna',
     python_requires='>=3.7',
-    install_requires=['bokeh>=2.3.3', 'panel>=0.11.3', 'pandas<=1.2.5', 'holoviews>=1.14.4',
+    install_requires=['bokeh>=2.3.3', 'panel>=0.11.3', 'pandas>=1.3.5', 'holoviews>=1.14.4',
                       'hvplot>=0.7.2', 'tqdm>=4.61.2'],
     author_email='prasanna.badami@hotmail.com',
     description='COVID19Analysis based on CSSEGISandData on GitHub',
